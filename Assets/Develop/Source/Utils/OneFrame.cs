@@ -3,23 +3,22 @@
 
 using Scellecs.Morpeh;
 
-namespace Develop.Source
+namespace Develop.Source.Utils
 {
-
 	public class OneFrame<T> : ISystem where T : struct, IComponent 
 	{
 		public World World { get; set; }
 
-		private Filter filter;
+		private Filter _filter;
 
 		public void OnAwake() 
 		{
-			this.filter = this.World.Filter.With<T>().Build();
+			_filter = World.Filter.With<T>().Build();
 		}
 
 		public void OnUpdate(float deltaTime) 
 		{
-			foreach (var entity in this.filter) 
+			foreach (var entity in _filter) 
 			{
 				entity.RemoveComponent<T>();
 			}
