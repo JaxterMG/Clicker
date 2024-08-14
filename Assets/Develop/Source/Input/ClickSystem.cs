@@ -25,10 +25,12 @@ namespace Develop.Source.Input
 
 		public override void OnUpdate(float deltaTime) 
 		{
-			if (_fireAction.WasPerformedThisFrame()) 
+			if (_fireAction.IsPressed()) 
 			{
+				// TODO: Make interval to avoid each frame click
+				
 				var entity = World.CreateEntity();
-				ref var mouseClickEvent = ref entity.AddComponent<ClickEvent>();
+				entity.AddComponent<ClickEvent>();
 				entity.AddComponent<OneFrame>();
 			}
 		}

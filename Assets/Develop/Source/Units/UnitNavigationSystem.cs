@@ -3,6 +3,7 @@
 
 using Develop.Source.Base;
 using Scellecs.Morpeh;
+using Scellecs.Morpeh.Collections;
 using Scellecs.Morpeh.Systems;
 using UnityEngine;
 
@@ -30,10 +31,18 @@ namespace Develop.Source.Units
 				
 				foreach (var baseEntity in _basesFilter)
 				{
-					ref var basePoint = ref baseEntity.GetComponent<BasePointRef>();
-					unitAgent.Value.SetDestination(basePoint.Value.position);
-					break;
+					ref var chosenBase = ref baseEntity.GetComponent<BasePointRef>();
+					if (!chosenBase.IsUsed)
+					{
+						chosenBase.IsUsed = true;
+						unitAgent.Value.SetDestination(chosenBase.Value.position);
+					}
+					else
+					{
+						chosenBase.IsUsed = false;
+					}
 				}
+				
 			}
 		}
 

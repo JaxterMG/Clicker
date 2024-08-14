@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f3e5db895821594790574b8473edacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order: 0
+  order: 100
   initializers: []
   updateSystems:
   - enabled: 1
@@ -53,6 +53,8 @@ MonoBehaviour:
     system: {fileID: 11400000, guid: a643083fa894ba74d904c477dc3aa1b6, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: bc8cd56b3a80e964d836143b893082d5, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: 07cf61c4380c4fe408ef2c9d224a0fea, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 93c769418cc859b45aeff93cc4ea446d, type: 2}
   fixedUpdateSystems: []

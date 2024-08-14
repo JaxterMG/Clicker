@@ -7,33 +7,27 @@ using UnityEngine;
 
 namespace Develop.Source.Utils
 {
-	[CreateAssetMenu(menuName = "ECS/Systems/" + nameof(OneFrameSystem))]
-	public class OneFrameSystem : UpdateSystem 
+	[CreateAssetMenu(menuName = "ECS/Systems/" + nameof(OneFrameEntitySystem))]
+	public class OneFrameEntitySystem : UpdateSystem 
 	{
 		private Filter _oneFrameFilter;
 
 		public override void OnAwake() 
 		{
-			_oneFrameFilter = World.Filter.With<OneFrame>().Build();
+			_oneFrameFilter = World.Filter.With<OneFrameEntity>().Build();
 		}
 
 		public override void OnUpdate(float deltaTime) 
 		{
-			var oneFrameComponents = World.GetStash<OneFrame>();
+			var oneFrameComponents = World.GetStash<OneFrameEntity>();
 			foreach (var entity in _oneFrameFilter) 
 			{
 				World.RemoveEntity(entity);
-				//oneFrameComponents.Remove(entity);
 			}
 		}
-
-		public void Dispose() 
+		public static OneFrameEntitySystem Create() 
 		{
-		}
-		
-		public static OneFrameSystem Create() 
-		{
-			return CreateInstance<OneFrameSystem>();
+			return CreateInstance<OneFrameEntitySystem>();
 		}
 	}
 }

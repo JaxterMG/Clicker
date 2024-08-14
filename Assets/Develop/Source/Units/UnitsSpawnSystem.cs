@@ -14,6 +14,8 @@ namespace Develop.Source.Units
 	[CreateAssetMenu(menuName = "ECS/Systems/" + nameof(UnitsSpawnSystem))]
 	public class UnitsSpawnSystem : UpdateSystem
 	{
+		//TODO: Redo UnitsPool
+		public UnitsPool UnitsPool;
 		private Filter _clickEventFilter;
 		private Filter _spawnsFilter;
 		
@@ -22,6 +24,8 @@ namespace Develop.Source.Units
 
 		public override void OnAwake()
 		{
+			if (UnitsPool == null) UnitsPool = GameObject.FindObjectOfType<UnitsPool>();
+			
 			_clickEventFilter = World.Filter.With<ClickEvent>().Build();
 			_spawnsFilter = World.Filter.With<UnitSpawnPointRef>().Build();
 			Addressables.LoadAssetAsync<UnitPrefabData>(UNIT_PREFAB_ADDRESS).Completed += OnPrefabDataLoaded;
@@ -47,14 +51,12 @@ namespace Develop.Source.Units
 					SpawnUnit(spawnPointRef.Value.position);
 					break;
 				}
-
-				entity.RemoveComponent<ClickEvent>();
-				World.RemoveEntity(entity);
 			}
 		}
 		private void SpawnUnit(Vector3 position)
 		{
-			GameObject.Instantiate(_prefabData.prefab, position, Quaternion.identity);
+			var unit = UnitsPool.Get(position, Quaternion.identity);
+			unit.transform.position = position;
 		}
 
 		public void Dispose()

@@ -4,12 +4,11 @@
 using Scellecs.Morpeh;
 using UnityEngine;
 
-namespace Develop.Source.Base
+namespace Develop.Source.Utils
 {
 	[System.Serializable]
-	public struct BasePointRef : IComponent
+	public struct TriggerEvent : IComponent
 	{
-		public Transform Value;
-		public bool IsUsed;
+		public Collider OtherCollider;
 	}
 }

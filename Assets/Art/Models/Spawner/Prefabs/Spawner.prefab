@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 5912906534268701497}
   - component: {fileID: 3464915786971560215}
   - component: {fileID: 9077442498937843355}
+  - component: {fileID: 4321117280487234280}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -165,3 +166,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serializedData:
     Value: {fileID: 7644062410663645855}
+--- !u!114 &4321117280487234280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6747263404795290693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cdfeef1f8944b528180a954af91401b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Prefab: {fileID: 8831723995867292822, guid: f81a5b473ea16f14fa1579cf8c50b370, type: 3}
+  PoolRoot: {fileID: 4791333736476547411}
+  InitialSIze: 50
