@@ -3,7 +3,7 @@
 
 namespace Develop.Source.UI.Currency
 {
-	public class CurrentMoneyPresenter
+	public class CurrentCurrencyPresenter
 	{
 		
 	}

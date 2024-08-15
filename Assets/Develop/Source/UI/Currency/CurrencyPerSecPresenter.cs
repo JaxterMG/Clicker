@@ -3,7 +3,7 @@
 
 namespace Develop.Source.UI.Currency
 {
-	public class CurrentCurrencyPresenter
+	public class CurrencyPerSecPresenter
 	{
 		
 	}
