@@ -45,8 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   order: 100
-  initializers: []
+  initializers:
+  - {fileID: 11400000, guid: c001744a04d777f4bbb3521c105be400, type: 2}
   updateSystems:
+  - enabled: 1
+    system: {fileID: 11400000, guid: 3126ad51926f50446af09e8b7d5d2ca4, type: 2}
   - enabled: 1
     system: {fileID: 11400000, guid: 269b2c7b1c871364c99f5b7086d5833a, type: 2}
   - enabled: 1
@@ -56,7 +59,13 @@ MonoBehaviour:
   - enabled: 1
     system: {fileID: 11400000, guid: 07cf61c4380c4fe408ef2c9d224a0fea, type: 2}
   - enabled: 1
+    system: {fileID: 11400000, guid: 4a9257c020bd64942a9e618653d97cc0, type: 2}
+  - enabled: 1
     system: {fileID: 11400000, guid: 93c769418cc859b45aeff93cc4ea446d, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: 286541b83d7109c42b6ae2b160a96ee3, type: 2}
+  - enabled: 1
+    system: {fileID: 11400000, guid: f84cb8b2d3d4e5a478b4b3d75a0e9f50, type: 2}
   fixedUpdateSystems: []
   lateUpdateSystems: []
   cleanupSystems: []
