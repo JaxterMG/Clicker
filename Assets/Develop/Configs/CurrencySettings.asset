@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CurrencySettings
   m_EditorClassIdentifier: 
   EntitiesAmount: 0
-  CurrencyPerEntity: 1
-  CurrencyValue: 1
+  CurrencyPerEntity: 2
+  CurrencyValue: 5
   CurrentCurrency: 0
